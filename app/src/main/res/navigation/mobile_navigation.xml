@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/consultarDesafioFragment2">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.fixtura.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.fixtura.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.fixtura.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/consultarDesafioFragment2"
+        android:name="com.example.fixtura.ui.desafio.ConsultarDesafioFragment"
+        android:label="consultar_desafio_fragment"
+        tools:layout="@layout/consultar_desafio_fragment" >
+        <action
+            android:id="@+id/action_consultarDesafioFragment2_to_detalleDesafioFragment"
+            app:destination="@id/detalleDesafioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleDesafioFragment"
+        android:name="com.example.fixtura.ui.desafio.DetalleDesafioFragment"
+        android:label="detalle_desafio_fragment"
+        tools:layout="@layout/detalle_desafio_fragment" >
+        <action
+            android:id="@+id/action_detalleDesafioFragment_to_insertarPuntajeFragment2"
+            app:destination="@id/insertarPuntajeFragment2" />
+        <action
+            android:id="@+id/action_detalleDesafioFragment_to_consultarJugadorFragment2"
+            app:destination="@id/consultarJugadorFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/consultarJugadorFragment2"
+        android:name="com.example.fixtura.ui.jugador.ConsultarJugadorFragment"
+        android:label="consultar_jugador_fragment"
+        tools:layout="@layout/consultar_jugador_fragment" >
+        <action
+            android:id="@+id/action_consultarJugadorFragment2_to_detalleJugadorFragment"
+            app:destination="@id/detalleJugadorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleJugadorFragment"
+        android:name="com.example.fixtura.ui.jugador.DetalleJugadorFragment"
+        android:label="detalle_jugador_fragment"
+        tools:layout="@layout/detalle_jugador_fragment" />
+    <fragment
+        android:id="@+id/insertarPuntajeFragment2"
+        android:name="com.example.fixtura.ui.puntaje.InsertarPuntajeFragment"
+        android:label="insertar_puntaje_fragment"
+        tools:layout="@layout/insertar_puntaje_fragment" />
+</navigation>

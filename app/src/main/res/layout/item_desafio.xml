@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFEB3B">
+
+            <TextView
+                android:id="@+id/invitadoNombre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="xD"
+                android:textAlignment="center"
+                android:textSize="16dp" />
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/invitadoImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+            </com.android.volley.toolbox.NetworkImageView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="#FFC107">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="VS"
+                android:textAlignment="center"
+                android:textSize="24dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FF9800">
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/retadorImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+            </com.android.volley.toolbox.NetworkImageView>
+
+            <TextView
+                android:id="@+id/retadorNombre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="xD"
+                android:textAlignment="center"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF5722">
+
+        <TextView
+            android:id="@+id/fechaDesafio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="02/10/2020"
+            android:textAlignment="center"
+            android:textSize="16dp"
+            android:textColor="#fff"/>
+    </LinearLayout>
+</LinearLayout>
