@@ -5,17 +5,69 @@
     android:layout_height="match_parent"
     tools:context=".ui.puntaje.InsertarPuntajeFragment">
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Insertar Puntaje"
-        android:textSize="72dp" />
-
-    <Spinner
-        android:id="@+id/disciplina"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </Spinner>
+        android:layout_margin="5dp">
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/banner"
+            android:background="#4CAF50" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Invitado:">
+        </TextView>
+        <Spinner
+            android:id="@+id/invitado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Spinner>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Score:">
+        </TextView>
+        <EditText
+            android:id="@+id/iscore"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retador:">
+        </TextView>
+        <Spinner
+            android:id="@+id/retador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Spinner>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Score:">
+        </TextView>
+        <EditText
+            android:id="@+id/rcore"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disciplina:">
+        </TextView>
+        <Spinner
+            android:id="@+id/disciplina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Spinner>
+    </LinearLayout>
 
 </FrameLayout>

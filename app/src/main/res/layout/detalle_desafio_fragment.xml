@@ -1,25 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.desafio.DetalleDesafioFragment">
-
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/banner2"
+        android:background="#3F51B5"
+        android:layout_margin="5dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:layout_margin="5dp">
+        <TextView
+            android:id="@+id/fechaDesafio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textAlignment="center"
+            android:textSize="28dp"
+            android:textColor="#fff"/>
+    </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Detalle Desafio" />
-
-        <Button
-            android:id="@+id/btnSaltar"
-            android:text="Saltar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:background="#2196F3">
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/invitadoImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+            </com.android.volley.toolbox.NetworkImageView>
+            <TextView
+                android:id="@+id/invitadoNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textAlignment="center"
+                android:textSize="24dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#03A9F4">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VS"
+                android:textAlignment="center"
+                android:textSize="24dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00BCD4">
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/retadorImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+            </com.android.volley.toolbox.NetworkImageView>
+            <TextView
+                android:id="@+id/retadorNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textAlignment="center"
+                android:textSize="24dp" />
+        </LinearLayout>
     </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

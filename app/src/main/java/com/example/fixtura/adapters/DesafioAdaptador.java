@@ -12,6 +12,8 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.example.fixtura.R;
 import com.example.fixtura.models.Desafio;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class DesafioAdaptador extends ArrayAdapter<Desafio> {
@@ -23,7 +25,8 @@ public class DesafioAdaptador extends ArrayAdapter<Desafio> {
         NetworkImageView invitadoImage;
         TextView retadorNombre;
         NetworkImageView retadorImage;
-        TextView fecha;
+        //TextView fecha;
+
 
         private ViewHolder() {
         }
@@ -37,6 +40,7 @@ public class DesafioAdaptador extends ArrayAdapter<Desafio> {
 
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
+
         final Desafio rowItem = (Desafio) getItem(position);
         LayoutInflater mInflater = (LayoutInflater) this.context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
@@ -46,7 +50,8 @@ public class DesafioAdaptador extends ArrayAdapter<Desafio> {
             holder.invitadoImage = (NetworkImageView) convertView.findViewById(R.id.invitadoImage);
             holder.retadorNombre = (TextView) convertView.findViewById(R.id.retadorNombre);
             holder.retadorImage = (NetworkImageView) convertView.findViewById(R.id.retadorImage);
-            holder.fecha = (TextView) convertView.findViewById(R.id.fechaDesafio);
+            //holder.fecha = (TextView) convertView.findViewById(R.id.fechaDesafio);
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -55,7 +60,7 @@ public class DesafioAdaptador extends ArrayAdapter<Desafio> {
         holder.invitadoImage.setImageUrl(rowItem.invitadoImage, this.queue);
         holder.retadorNombre.setText(rowItem.retadorNombre);
         holder.retadorImage.setImageUrl(rowItem.retadorImage, this.queue);
-        holder.fecha.setText(rowItem.fecha);
+        //holder.fecha.setText(rowItem.fecha.get);
         return convertView;
     }
 }

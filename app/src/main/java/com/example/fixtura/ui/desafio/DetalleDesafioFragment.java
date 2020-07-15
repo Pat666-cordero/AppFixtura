@@ -13,13 +13,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
 import com.example.fixtura.R;
+import com.example.fixtura.adapters.DesafioAdaptador;
+import com.example.fixtura.helpers.QueueUtils;
+import com.example.fixtura.models.Desafio;
+
+import java.util.ArrayList;
 
 public class DetalleDesafioFragment extends Fragment {
 
+    //public Desafio desafioObj;
+    ImageLoader imageLoader;
+    QueueUtils.QueueObject encolador;
+    ImageLoader encoladorImagenes;
+    public int desafioId;
+    public Desafio desafioObject;
     private DetalleDesafioViewModel mViewModel;
-
+    View root;
     public static DetalleDesafioFragment newInstance() {
         return new DetalleDesafioFragment();
     }
@@ -28,15 +43,34 @@ public class DetalleDesafioFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.detalle_desafio_fragment, container, false);
-        Button btnSaltar = root.findViewById(R.id.btnSaltar);
-        btnSaltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_detalleDesafioFragment_to_consultarJugadorFragment2);
-            }
-        });
+        root = inflater.inflate(R.layout.detalle_desafio_fragment, container, false);
+        desafioId = getArguments().getInt("desafio_id");
+        desafioObject = new Desafio("-", "-", "-", "", "");
+        desafioObject.id = desafioId;
+        encolador = QueueUtils.getInstance(this.getContext());
+        encoladorImagenes = encolador.getImageLoader();
+        Desafio.injectDesafioFromCloud(encolador, desafioObject, this);
+
+
         return root;
+    }
+public void refreshList() {
+        pintar();
+}
+    public  void pintar() {
+        TextView invitadoNombre = root.findViewById(R.id.invitadoNombre);
+        invitadoNombre.setText(this.desafioObject.invitadoNombre);
+        NetworkImageView invitadoImage = root.findViewById(R.id.invitadoImage);
+        imageLoader = QueueUtils.getInstance(this.getContext()).getImageLoader();
+        invitadoImage.setImageUrl(this.desafioObject.invitadoImage, imageLoader);
+        TextView retadorNombre = root.findViewById(R.id.retadorNombre);
+        retadorNombre.setText(this.desafioObject.retadorNombre);
+        NetworkImageView retadorImage = root.findViewById(R.id.retadorImage);
+        imageLoader = QueueUtils.getInstance(this.getContext()).getImageLoader();
+        retadorImage.setImageUrl(this.desafioObject.retadorImage, imageLoader);
+        // La fecha se tiene que analizar, eso te lo dejo.
+        TextView fechaDesafio = root.findViewById(R.id.fechaDesafio);
+        fechaDesafio.setText(this.desafioObject.getFechaFormat());
     }
 
     @Override

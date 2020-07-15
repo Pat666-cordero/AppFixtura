@@ -3,56 +3,46 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <!--<TextView
+        android:id="@+id/dnombrex"
+        android:text="Disciplina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFC107"
+        android:textAlignment="center"/>-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFEB3B">
-        <TextView
-            android:id="@+id/equipoNombre"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="xD"
-            android:textAlignment="center"
-            android:textSize="16dp" />
+        android:layout_margin="5dp">
         <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/equipoImage"
-            android:layout_width="60dp"
-            android:layout_height="50dp">
-        </com.android.volley.toolbox.NetworkImageView>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF9800">
-        <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/jugadorFoto"
+            android:id="@+id/foto"
             android:layout_width="50dp"
-            android:layout_height="40dp">
+            android:layout_height="50dp"
+            android:layout_margin="5dp">
         </com.android.volley.toolbox.NetworkImageView>
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#FF5722"
+            android:layout_margin="5dp">
             <TextView
-                android:id="@+id/jugadorNombre"
+                android:id="@+id/nombre"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Pedro"
-                android:textAlignment="center"
-                android:textSize="16dp" />
-            <TextView
-                android:id="@+id/jugadorApellido"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Campos"
+                android:layout_height="wrap_content"
+                android:text="-"
                 android:textAlignment="center"
                 android:textSize="16dp"
-                android:background="@color/colorPrimary"/>
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/apellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:textColor="#fff"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

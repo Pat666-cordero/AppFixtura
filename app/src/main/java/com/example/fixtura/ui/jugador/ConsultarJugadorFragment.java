@@ -13,18 +13,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.example.fixtura.R;
-import com.example.fixtura.adapters.JugadorAdaptador;
+import com.example.fixtura.adapters.DisciplinaAdaptador;
+import com.example.fixtura.adapters.PersonaAdaptador;
 import com.example.fixtura.helpers.QueueUtils;
-import com.example.fixtura.models.Jugador;
+import com.example.fixtura.models.Disciplina;
+import com.example.fixtura.models.Persona;
 
 import java.util.ArrayList;
 
 public class ConsultarJugadorFragment extends Fragment {
 
+    public Disciplina disciplinaObj;
     ListView lista;
-    JugadorAdaptador jugadorAdaptador;
-    ArrayList<Jugador> datos;
+    DisciplinaAdaptador disciplinaAdaptador;
+    ArrayList<Disciplina> datos;
     QueueUtils.QueueObject encolador;
     //ImageLoader encoladorImagenes;
 
@@ -42,12 +46,13 @@ public class ConsultarJugadorFragment extends Fragment {
         encolador = QueueUtils.getInstance(this.getContext());
         //encoladorImagenes = encolador.getImageLoader();
         datos = new ArrayList<>();
+        //int discplinaId = 1;
 
-        //Desafio.injectDesafiosFromCloud(encolador, datos, this);
+        Disciplina.injectDisciplinasFromCloud(encolador, datos,this);
 
+        disciplinaAdaptador = new DisciplinaAdaptador(this.getContext(), datos);
         lista = root.findViewById(R.id.lista);
-        jugadorAdaptador = new JugadorAdaptador(this.getContext(), Jugador.getCollection()/*datos, encoladorImagenes*/);
-        lista.setAdapter(jugadorAdaptador);
+        lista.setAdapter(disciplinaAdaptador);
 
         return root;
     }
@@ -59,10 +64,10 @@ public class ConsultarJugadorFragment extends Fragment {
         // TODO: Use the ViewModel
     }
 
-    /*public void refreshList() {
-        if( this.desafioAdaptador != null ) {
-            this.desafioAdaptador.notifyDataSetChanged();
+    public void refreshList() {
+        if( this.disciplinaAdaptador != null ) {
+            this.disciplinaAdaptador.notifyDataSetChanged();
         }
-    }*/
+    }
 
 }

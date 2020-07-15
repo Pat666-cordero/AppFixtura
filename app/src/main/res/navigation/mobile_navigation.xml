@@ -25,7 +25,7 @@
     <fragment
         android:id="@+id/consultarDesafioFragment2"
         android:name="com.example.fixtura.ui.desafio.ConsultarDesafioFragment"
-        android:label="consultar_desafio_fragment"
+        android:label="Consultar Desafio"
         tools:layout="@layout/consultar_desafio_fragment" >
         <action
             android:id="@+id/action_consultarDesafioFragment2_to_detalleDesafioFragment"
@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/detalleDesafioFragment"
         android:name="com.example.fixtura.ui.desafio.DetalleDesafioFragment"
-        android:label="detalle_desafio_fragment"
+        android:label="Detalle Desafio"
         tools:layout="@layout/detalle_desafio_fragment" >
         <action
             android:id="@+id/action_detalleDesafioFragment_to_insertarPuntajeFragment2"
@@ -46,7 +46,7 @@
     <fragment
         android:id="@+id/consultarJugadorFragment2"
         android:name="com.example.fixtura.ui.jugador.ConsultarJugadorFragment"
-        android:label="consultar_jugador_fragment"
+        android:label="Consultar Jugador"
         tools:layout="@layout/consultar_jugador_fragment" >
         <action
             android:id="@+id/action_consultarJugadorFragment2_to_detalleJugadorFragment"
@@ -55,11 +55,11 @@
     <fragment
         android:id="@+id/detalleJugadorFragment"
         android:name="com.example.fixtura.ui.jugador.DetalleJugadorFragment"
-        android:label="detalle_jugador_fragment"
+        android:label="Detalle Jugador"
         tools:layout="@layout/detalle_jugador_fragment" />
     <fragment
         android:id="@+id/insertarPuntajeFragment2"
         android:name="com.example.fixtura.ui.puntaje.InsertarPuntajeFragment"
-        android:label="insertar_puntaje_fragment"
+        android:label="Insertar Puntaje"
         tools:layout="@layout/insertar_puntaje_fragment" />
 </navigation>
