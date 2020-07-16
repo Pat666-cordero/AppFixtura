@@ -16,10 +16,10 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />-->
-        <item
+        <!--<item
             android:id="@+id/insertarPuntajeFragment2"
             android:icon="@drawable/add"
-            android:title="Insertar Puntaje" />
+            android:title="Insertar Puntaje" />-->
         <item
             android:id="@+id/consultarDesafioFragment2"
             android:icon="@drawable/search"
