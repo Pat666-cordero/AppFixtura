@@ -47,13 +47,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
+                android:layout_weight="1"
                 android:textAlignment="center"
                 android:textSize="24dp" />
             <Button
                 android:id="@+id/invitadoAdd"
                 android:text="+1"
+                android:layout_weight="0.1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="#3F51B5"
+                android:textColor="#fff"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,13 +86,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
+                android:layout_weight="1"
                 android:textAlignment="center"
                 android:textSize="24dp" />
             <Button
                 android:id="@+id/retadorAdd"
                 android:text="+1"
+                android:layout_weight="0.1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="#3F51B5"
+                android:textColor="#fff"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
