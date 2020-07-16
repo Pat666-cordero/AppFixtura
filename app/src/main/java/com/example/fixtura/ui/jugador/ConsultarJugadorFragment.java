@@ -7,10 +7,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -53,7 +55,19 @@ public class ConsultarJugadorFragment extends Fragment {
         disciplinaAdaptador = new DisciplinaAdaptador(this.getContext(), datos);
         lista = root.findViewById(R.id.lista);
         lista.setAdapter(disciplinaAdaptador);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("discplina_id", datos.get(i).id);
+                Navigation.findNavController(view).
+                        navigate(R.id.action_consultarJugadorFragment2_to_detalleJugadorFragment, bundle);
+        /*        getFragmentManager().beginTransaction().replace(R.id.detalleDesafioFragment, o)
+                        .addToBackStack(null).commit();*/
+            }
+        });
         return root;
     }
 

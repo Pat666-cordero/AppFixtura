@@ -12,7 +12,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
-        Intent o = new Intent(this, MainActivity.class);
+        Intent o = new Intent(this, LoginActivity.class);
 
         try {
             TimeUnit.SECONDS.sleep(5);

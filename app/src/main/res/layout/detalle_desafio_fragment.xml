@@ -44,11 +44,16 @@
             </com.android.volley.toolbox.NetworkImageView>
             <TextView
                 android:id="@+id/invitadoNombre"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
                 android:textAlignment="center"
                 android:textSize="24dp" />
+            <Button
+                android:id="@+id/invitadoAdd"
+                android:text="+1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,11 +79,16 @@
             </com.android.volley.toolbox.NetworkImageView>
             <TextView
                 android:id="@+id/retadorNombre"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
                 android:textAlignment="center"
                 android:textSize="24dp" />
+            <Button
+                android:id="@+id/retadorAdd"
+                android:text="+1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

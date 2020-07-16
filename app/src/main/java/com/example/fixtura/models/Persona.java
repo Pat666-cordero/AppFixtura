@@ -35,7 +35,7 @@ public class Persona {
                                                final ArrayList<Persona> personas,
                                                int discplinaId,
                                                final DetalleJugadorFragment _interface) {
-        String url = "https://dccd8e368d44.ngrok.io/api/auth/disciplinas/" + discplinaId;
+        String url = "https://e448cdf9014d.ngrok.io/api/auth/disciplinas/" + discplinaId;
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {

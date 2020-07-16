@@ -31,10 +31,13 @@ public class DetalleDesafioFragment extends Fragment {
     ImageLoader imageLoader;
     QueueUtils.QueueObject encolador;
     ImageLoader encoladorImagenes;
+
     public int desafioId;
     public Desafio desafioObject;
     private DetalleDesafioViewModel mViewModel;
     View root;
+    Button btnAddInvitado;
+    Button btnAddRetador;
     public static DetalleDesafioFragment newInstance() {
         return new DetalleDesafioFragment();
     }
@@ -44,6 +47,10 @@ public class DetalleDesafioFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         root = inflater.inflate(R.layout.detalle_desafio_fragment, container, false);
+
+        btnAddInvitado = root.findViewById(R.id.invitadoAdd);
+        btnAddRetador = root.findViewById(R.id.retadorAdd);
+
         desafioId = getArguments().getInt("desafio_id");
         desafioObject = new Desafio("-", "-", "-", "", "");
         desafioObject.id = desafioId;
@@ -51,8 +58,30 @@ public class DetalleDesafioFragment extends Fragment {
         encoladorImagenes = encolador.getImageLoader();
         Desafio.injectDesafioFromCloud(encolador, desafioObject, this);
 
+        btnAddInvitado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnAddInvitado.setEnabled(false);
+                desafioObject.invitadoPunto += 1;
+                Desafio.updateDesafioFromCloud(encolador, desafioObject,
+                        "invitado", DetalleDesafioFragment.this);
+            }
+        });
+
+        btnAddRetador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnAddRetador.setEnabled(false);
+                desafioObject.retadorPunto += 1;
+                Desafio.updateDesafioFromCloud(encolador, desafioObject,
+                        "retador", DetalleDesafioFragment.this);
+            }
+        });
 
         return root;
+    }
+    public void markAsOk() {
+
     }
 public void refreshList() {
         pintar();
@@ -71,6 +100,10 @@ public void refreshList() {
         // La fecha se tiene que analizar, eso te lo dejo.
         TextView fechaDesafio = root.findViewById(R.id.fechaDesafio);
         fechaDesafio.setText(this.desafioObject.getFechaFormat());
+        btnAddInvitado.setText(this.desafioObject.invitadoPunto + "");
+        btnAddInvitado.setEnabled(true);
+        btnAddRetador.setText(this.desafioObject.retadorPunto + "");
+        btnAddRetador.setEnabled(true);
     }
 
     @Override

@@ -34,7 +34,7 @@ public class Disciplina {
     public static void injectDisciplinasFromCloud(final QueueUtils.QueueObject o,
                                                final ArrayList<Disciplina> disciplinas,
                                                final ConsultarJugadorFragment _interface) {
-        String url = "https://dccd8e368d44.ngrok.io/api/auth/disciplinas";
+        String url = "https://e448cdf9014d.ngrok.io/api/auth/disciplinas";
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {

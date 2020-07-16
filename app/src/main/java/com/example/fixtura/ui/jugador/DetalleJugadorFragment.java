@@ -51,8 +51,9 @@ public class DetalleJugadorFragment extends Fragment {
         //aqui de alguna manera tienes que tenes el discpina ID
         //para poder llamar a las personas de esa disciplina.
         //Partiendo de que tu discplina es el 1
-        int discplinaId = 1;
-        Persona.injectJugadoresFromCloud(encolador, datos,0,this);
+        int discplinaId =  getArguments().getInt("discplina_id");;
+
+        Persona.injectJugadoresFromCloud(encolador, datos,discplinaId,this);
 
         personaAdaptador = new PersonaAdaptador(this.getContext(), datos, encoladorImagenes);
         lista = root.findViewById(R.id.lista);

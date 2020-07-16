@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -48,6 +49,7 @@ public class ConsultarDesafioFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View root =inflater.inflate(R.layout.consultar_desafio_fragment, container, false);
+
 
         encolador = QueueUtils.getInstance(this.getContext());
         encoladorImagenes = encolador.getImageLoader();
@@ -106,6 +108,9 @@ public class ConsultarDesafioFragment extends Fragment {
                 }
             }
         });
+
+
+
 
         return root;
     }
