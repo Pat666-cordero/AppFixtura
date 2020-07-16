@@ -19,8 +19,7 @@ public class PersonaAdaptador extends ArrayAdapter<Persona> {
     ImageLoader queue;
 
     private class ViewHolder {
-        TextView nombre;
-        TextView apellido;
+        TextView nombreCompleto;
         NetworkImageView foto;
 
         private ViewHolder() {
@@ -40,15 +39,13 @@ public class PersonaAdaptador extends ArrayAdapter<Persona> {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_jugador, null);
             holder = new ViewHolder();
-            holder.nombre = (TextView) convertView.findViewById(R.id.nombre);
-            holder.apellido = (TextView) convertView.findViewById(R.id.apellido);
+            holder.nombreCompleto = (TextView) convertView.findViewById(R.id.nombre);
             holder.foto = (NetworkImageView) convertView.findViewById(R.id.foto);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.nombre.setText(rowItem.nombre);
-        holder.apellido.setText(rowItem.apellido);
+        holder.nombreCompleto.setText(rowItem.nombreCompleto);
         holder.foto.setImageUrl(rowItem.foto, this.queue);
         return convertView;
     }

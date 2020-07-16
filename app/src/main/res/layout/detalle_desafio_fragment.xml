@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:src="@drawable/banner2"
         android:background="#3F51B5"
         android:layout_margin="5dp"/>

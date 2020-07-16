@@ -47,8 +47,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }else if(dao.login(u,p)==1){
                     Usuario ux = dao.getUsUario(u,p);
                     Toast.makeText(this,"Datos correctos", Toast.LENGTH_LONG).show();
-                    Intent i2 = new Intent(LoginActivity.this, HomeFragment.class);
-                    i2.putExtra("id", ux.getId());
+                    Intent i2 = new Intent(LoginActivity.this, MainActivity.class);
+                    //i2.putExtra("id", ux.getId());
                     startActivity(i2);
                 }
                 break;

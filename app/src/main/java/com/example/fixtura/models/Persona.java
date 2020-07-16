@@ -15,19 +15,17 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class Persona {
-    public String nombre;
-    public String apellido;
+    public String nombreCompleto;
     public String foto;
 
-    public Persona(String _nombre, String _apellido, String _foto) {
-        this.nombre = _nombre;
-        this.apellido = _apellido;
+    public Persona(String _nombreCompleto, String _foto) {
+        this.nombreCompleto = _nombreCompleto;
         this.foto = _foto;
     }
 
     public static ArrayList getCollection() {
         ArrayList<Persona> collection = new ArrayList<>();
-        collection.add(new Persona("Jose", "Campos", ""));
+        collection.add(new Persona("Jose Campos", ""));
         return collection;
     }
 
@@ -35,7 +33,7 @@ public class Persona {
                                                final ArrayList<Persona> personas,
                                                int discplinaId,
                                                final DetalleJugadorFragment _interface) {
-        String url = "https://e448cdf9014d.ngrok.io/api/auth/disciplinas/" + discplinaId;
+        String url = "https://protected-fjord-91518.herokuapp.com/api/auth/disciplinas/" + discplinaId;
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
@@ -54,8 +52,7 @@ public class Persona {
                                             JSONObject o = personasx.getJSONObject(i);
                                             //JSONObject persona = o.getJSONObject("persona");
                                             personas.add(new Persona(
-                                                    o.getString("nombre"),
-                                                    o.getString("apellido"),
+                                                    o.getString("nombreCompleto"),
                                                     o.getString(("foto"))));
                                         }
                                     } catch (JSONException e) {

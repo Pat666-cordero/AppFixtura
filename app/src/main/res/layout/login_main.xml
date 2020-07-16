@@ -9,41 +9,54 @@
     tools:context=".LoginActivity">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:src="@drawable/icon"
         android:layout_margin="5dp"
         android:background="#3F51B5"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="INICIAR SESION" />
     <EditText
         android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:hint="Usuario"
         android:inputType="textEmailAddress" />
     <EditText
         android:id="@+id/pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:hint="Password"
         android:inputType="textPassword" />
-    <Button
-        android:id="@+id/btnEntrar"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@color/colorPrimary"
-        android:text="ENTRAR"
-        android:textColor="#ffffff"
-        android:textStyle="bold"/>
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="#3F51B5"
-        android:text="REGISTRAR"
-        android:textColor="#ffffff"
-        android:textStyle="bold"/>
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnEntrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:text="ENTRAR"
+            android:textColor="#ffffff"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="#3F51B5"
+            android:text="REGISTRAR"
+            android:textColor="#ffffff"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
 </LinearLayout>

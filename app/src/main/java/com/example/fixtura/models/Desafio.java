@@ -72,7 +72,7 @@ public class Desafio {
                                               final Desafio desafio,
                                               final String tipo,
                                               final DetalleDesafioFragment _interface) {
-        String url = "https://e448cdf9014d.ngrok.io/api/auth/desafios/" + desafio.id + "/addpuntos";
+        String url = "https://protected-fjord-91518.herokuapp.com/api/auth/desafios/" + desafio.id + "/addpuntos";
         StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
                 new Response.Listener<String>() {
                     @Override
@@ -154,7 +154,7 @@ public class Desafio {
     public static void injectDesafioFromCloud(final QueueUtils.QueueObject o,
                                                final Desafio desafio,
                                                final DetalleDesafioFragment _interface) {
-        String url = "https://e448cdf9014d.ngrok.io/api/auth/desafios/" + desafio.id;
+        String url = "https://protected-fjord-91518.herokuapp.com/api/auth/desafios/" + desafio.id;
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
@@ -179,7 +179,7 @@ public class Desafio {
     public static void injectDesafiosFromCloud(final QueueUtils.QueueObject o,
                                                final ArrayList<Desafio> desafios,
                                                final ConsultarDesafioFragment _interface) {
-        String url = "https://e448cdf9014d.ngrok.io/api/auth/desafios";
+        String url = "https://protected-fjord-91518.herokuapp.com/api/auth/desafios";
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
@@ -226,7 +226,7 @@ public class Desafio {
                                                final ArrayList<Desafio> desafios,
                                                final String keyword,
                                                final ConsultarDesafioFragment _interface) {
-        String url = "https://e448cdf9014d.ngrok.io/api/auth/desafios?keyword=" + keyword;
+        String url = "https://protected-fjord-91518.herokuapp.com/api/auth/desafios?keyword=" + keyword;
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {

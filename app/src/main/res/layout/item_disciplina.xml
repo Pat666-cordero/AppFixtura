@@ -15,7 +15,8 @@
             android:textSize="24sp"
             android:paddingTop="10dp"
             android:paddingLeft="20dp"
-            android:paddingBottom="10dp"/>
+            android:paddingBottom="10dp"
+            android:background="#fff"/>
         <TextView
             android:id="@+id/participantes"
             android:layout_width="match_parent"
